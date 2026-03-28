@@ -25,15 +25,37 @@ const db = getFirestore(app);
 // Rating Variable
 let currentRating = 0;
 
-// ⭐ Set Rating
-function setRating(n) {
-  currentRating = n;
-  const stars = document.querySelectorAll('#starInput span');
+document.addEventListener("DOMContentLoaded", () => {
+
+  const stars = document.querySelectorAll('#starInput .star');
+
+  function highlightStars(rating) {
+    stars.forEach((star, i) => {
+      star.classList.toggle("active", i < rating);
+    });
+  }
 
   stars.forEach((star, index) => {
-    star.style.color = index < n ? "#ffcc00" : "#ccc";
+
+    // Hover preview
+    star.addEventListener("mouseenter", () => {
+      highlightStars(index + 1);
+    });
+
+    // Restore after hover
+    star.addEventListener("mouseleave", () => {
+      highlightStars(currentRating);
+    });
+
+    // Click select
+    star.addEventListener("click", () => {
+      currentRating = index + 1;
+      highlightStars(currentRating);
+    });
+
   });
-}
+
+});
 
 // 🚀 Submit Review
 async function submitReview() {
