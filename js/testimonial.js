@@ -125,6 +125,8 @@ function loadReviewsRealtime() {
   });
 }
 
+window.submitReview = submitReview;
+
 // 🌐 Make functions accessible to HTML
 
 // 🚀 Load reviews on page load
