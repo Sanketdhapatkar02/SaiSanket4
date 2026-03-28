@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIC Plan Videos</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f9fb;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    .video-section {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .video-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 50px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .video-card.active-highlight {
+      border: 2px solid #1a7a6e;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 15px;
+      background: #1a7a6e;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background: #333;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      width: fit-content;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>LIC Plan Explanation Videos</h1>
+  <p class="subtitle">Understand each plan clearly before making a decision</p>
+
+  <a href="index.html" class="back-btn">← Back to Plans</a>
+
+  <div class="video-section">
+
+    <!-- Jeevan Anand -->
+    <div class="video-card" id="jeevan-anand">
+      <h2>LIC Jeevan Anand</h2>
+      <video controls>
+        <source src="videos/jeevan-anand.mp4" type="video/mp4">
+      </video>
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Jeevan Anand plan.')">
+        Talk to Expert →
+      </a>
+    </div>
+
+    <!-- Jeevan Umang -->
+    <div class="video-card" id="jeevan-umang">
+      <h2>LIC Jeevan Umang</h2>
+      <video controls>
+        <source src="videos/jeevan-umang.mp4" type="video/mp4">
+      </video>
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Jeevan Umang plan.')">
+        Talk to Expert →
+      </a>
+    </div>
+
+    <!-- Tech Term -->
+    <div class="video-card" id="tech-term">
+      <h2>LIC Tech Term</h2>
+      <video controls>
+        <source src="videos/tech-term.mp4" type="video/mp4">
+      </video>
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Tech Term plan.')">
+        Talk to Expert →
+      </a>
+    </div>
+
+    <!-- Money Back -->
+    <div class="video-card" id="money-back">
+      <h2>LIC Money Back</h2>
+      <video controls>
+        <source src="videos/money-back.mp4" type="video/mp4">
+      </video>
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Money Back plan.')">
+        Talk to Expert →
+      </a>
+    </div>
+
+    <!-- Jeevan Lakshya -->
+    <div class="video-card" id="jeevan-lakshya">
+      <h2>LIC Jeevan Lakshya</h2>
+      <video controls>
+        <source src="videos/jeevan-lakshya.mp4" type="video/mp4">
+      </video>
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Jeevan Lakshya plan.')">
+        Talk to Expert →
+      </a>
+    </div>
+
+    <!-- Jeevan Shanti -->
+    <div class="video-card" id="jeevan-shanti">
+      <h2>LIC Jeevan Shanti</h2>
+      <video controls>
+        <source src="videos/jeevan-shanti.mp4" type="video/mp4">
+      </video>
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Jeevan Shanti plan.')">
+        Talk to Expert →
+      </a>
+    </div>
+
+    <!-- Aadhaar Shila -->
+    <div class="video-card" id="aadhaar-shila">
+      <h2>LIC Aadhaar Shila</h2>
+      <video controls>
+        <source src="videos/aadhaar-shila.mp4" type="video/mp4">
+      </video>
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Aadhaar Shila plan.')">
+        Talk to Expert →
+      </a>
+    </div>
+
+    <!-- Jeevan Azad -->
+    <div class="video-card" id="jeevan-azad">
+      <h2>LIC Jeevan Azad</h2>
+      <video controls>
+        <source src="videos/jeevan-azad.mp4" type="video/mp4">
+      </video>
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Jeevan Azad plan.')">
+        Talk to Expert →
+      </a>
+    </div>
+
+  </div>
+
+  <!-- 🔥 Auto scroll + highlight -->
+  <script>
+    function openWhatsApp(message) {
+      const phone = "919867431898";
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+
+    window.addEventListener("load", () => {
+      const hash = window.location.hash;
+
+      if (hash) {
+        const target = document.querySelector(hash);
+
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: "smooth", block: "center" });
+            target.classList.add("active-highlight");
+          }, 300);
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
