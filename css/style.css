@@ -673,6 +673,20 @@ section.alt { background: var(--warm); }
   line-height: 1.7;
 }
 
+.star-rating .star.active {
+  color: #f5a623;
+}
+
+.star-rating .star:hover,
+.star-rating .star:hover ~ .star {
+  color: #ddd;
+}
+
+.star-rating .star:hover,
+.star-rating .star:hover ~ .star {
+  color: #f5a623;
+}
+
 /* ==================== MODAL ==================== */
 .modal-overlay {
   display: none;
