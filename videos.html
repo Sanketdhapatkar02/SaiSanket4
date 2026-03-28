@@ -7,171 +7,222 @@
 
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: #f8f9fb;
+      background: linear-gradient(135deg, #f0f4ff, #f8f9fb);
+      color: #1a2e2c;
     }
 
-    h1 {
+    /* HEADER */
+    .header {
       text-align: center;
-      margin: 40px 0 10px;
+      padding: 40px 20px 10px;
     }
 
-    .subtitle {
-      text-align: center;
+    .header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .header p {
       color: #666;
-      margin-bottom: 40px;
+      margin-top: 8px;
     }
 
+    /* BACK BUTTON */
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      padding: 10px 18px;
+      background: #1a7a6e;
+      color: #fff;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #155e56;
+    }
+
+    /* GRID */
     .video-section {
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
       padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
     }
 
+    @media(min-width: 768px) {
+      .video-section {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* CARD */
     .video-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 50px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
       transition: 0.3s;
+      position: relative;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     }
 
     .video-card.active-highlight {
       border: 2px solid #1a7a6e;
     }
 
+    .video-card h2 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
     video {
       width: 100%;
       border-radius: 10px;
-      margin-top: 10px;
+      outline: none;
     }
 
+    /* CTA BUTTON */
     .cta-btn {
       display: inline-block;
-      margin-top: 15px;
-      padding: 10px 15px;
-      background: #1a7a6e;
+      margin-top: 12px;
+      padding: 10px 16px;
+      background: linear-gradient(135deg, #1a7a6e, #28a745);
       color: white;
-      border-radius: 6px;
+      border-radius: 8px;
       text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
     }
 
-    .back-btn {
-      display: block;
-      text-align: center;
-      margin: 20px auto;
-      padding: 10px 20px;
-      background: #333;
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      width: fit-content;
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
+
+    /* SMALL LABEL */
+    .tag {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
   </style>
 </head>
 
 <body>
 
-  <h1>LIC Plan Explanation Videos</h1>
-  <p class="subtitle">Understand each plan clearly before making a decision</p>
+  <div class="header">
+    <h1>LIC Plan Explanation Videos</h1>
+    <p>Watch simple explanations before choosing the right plan</p>
+  </div>
 
   <a href="index.html" class="back-btn">← Back to Plans</a>
 
   <div class="video-section">
 
-    <!-- Jeevan Anand -->
     <div class="video-card" id="jeevan-anand">
+      <div class="tag">Endowment + Whole Life</div>
       <h2>LIC Jeevan Anand</h2>
       <video controls>
         <source src="videos/jeevan-anand.mp4" type="video/mp4">
       </video>
-      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Jeevan Anand plan.')">
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Jeevan Anand plan.')">
         Talk to Expert →
       </a>
     </div>
 
-    <!-- Jeevan Umang -->
     <div class="video-card" id="jeevan-umang">
+      <div class="tag">Whole Life Income Plan</div>
       <h2>LIC Jeevan Umang</h2>
       <video controls>
         <source src="videos/jeevan-umang.mp4" type="video/mp4">
       </video>
-      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Jeevan Umang plan.')">
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Jeevan Umang plan.')">
         Talk to Expert →
       </a>
     </div>
 
-    <!-- Tech Term -->
     <div class="video-card" id="tech-term">
+      <div class="tag">Pure Term Insurance</div>
       <h2>LIC Tech Term</h2>
       <video controls>
         <source src="videos/tech-term.mp4" type="video/mp4">
       </video>
-      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Tech Term plan.')">
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Tech Term plan.')">
         Talk to Expert →
       </a>
     </div>
 
-    <!-- Money Back -->
     <div class="video-card" id="money-back">
+      <div class="tag">Periodic Returns Plan</div>
       <h2>LIC Money Back</h2>
       <video controls>
         <source src="videos/money-back.mp4" type="video/mp4">
       </video>
-      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Money Back plan.')">
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Money Back plan.')">
         Talk to Expert →
       </a>
     </div>
 
-    <!-- Jeevan Lakshya -->
     <div class="video-card" id="jeevan-lakshya">
+      <div class="tag">Child Future Plan</div>
       <h2>LIC Jeevan Lakshya</h2>
       <video controls>
         <source src="videos/jeevan-lakshya.mp4" type="video/mp4">
       </video>
-      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Jeevan Lakshya plan.')">
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Jeevan Lakshya plan.')">
         Talk to Expert →
       </a>
     </div>
 
-    <!-- Jeevan Shanti -->
     <div class="video-card" id="jeevan-shanti">
+      <div class="tag">Retirement Plan</div>
       <h2>LIC Jeevan Shanti</h2>
       <video controls>
         <source src="videos/jeevan-shanti.mp4" type="video/mp4">
       </video>
-      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Jeevan Shanti plan.')">
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Jeevan Shanti plan.')">
         Talk to Expert →
       </a>
     </div>
 
-    <!-- Aadhaar Shila -->
     <div class="video-card" id="aadhaar-shila">
+      <div class="tag">Women Plan</div>
       <h2>LIC Aadhaar Shila</h2>
       <video controls>
         <source src="videos/aadhaar-shila.mp4" type="video/mp4">
       </video>
-      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Aadhaar Shila plan.')">
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Aadhaar Shila plan.')">
         Talk to Expert →
       </a>
     </div>
 
-    <!-- Jeevan Azad -->
     <div class="video-card" id="jeevan-azad">
+      <div class="tag">Limited Premium Plan</div>
       <h2>LIC Jeevan Azad</h2>
       <video controls>
         <source src="videos/jeevan-azad.mp4" type="video/mp4">
       </video>
-      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want to know more about LIC Jeevan Azad plan.')">
+      <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Jeevan Azad plan.')">
         Talk to Expert →
       </a>
     </div>
 
   </div>
 
-  <!-- 🔥 Auto scroll + highlight -->
   <script>
     function openWhatsApp(message) {
       const phone = "919867431898";
@@ -184,7 +235,6 @@
 
       if (hash) {
         const target = document.querySelector(hash);
-
         if (target) {
           setTimeout(() => {
             target.scrollIntoView({ behavior: "smooth", block: "center" });
