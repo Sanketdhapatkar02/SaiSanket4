@@ -1010,18 +1010,38 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
 <script>
   var currentRating = 0;
   var starLabels = ['','Poor','Fair','Good','Very Good','Excellent'];
- function setRating(n) {
-  currentRating = n;
+ let currentRating = 0;
 
-  const stars = document.querySelectorAll('#starInput .star');
+const stars = document.querySelectorAll('#starInput .star');
 
-  stars.forEach((star, index) => {
-    star.classList.remove("active");
+// ⭐ Hover preview
+stars.forEach((star, index) => {
+
+  star.addEventListener("mouseover", () => {
+    highlightStars(index + 1);
   });
 
-  for (let i = 0; i < n; i++) {
-    stars[i].classList.add("active");
-  }
+  star.addEventListener("mouseout", () => {
+    highlightStars(currentRating); // restore selected
+  });
+
+  // ⭐ Click select
+  star.addEventListener("click", () => {
+    currentRating = index + 1;
+    highlightStars(currentRating);
+  });
+
+});
+
+// 🔥 Main highlight function
+function highlightStars(rating) {
+  stars.forEach((star, i) => {
+    if (i < rating) {
+      star.classList.add("active");
+    } else {
+      star.classList.remove("active");
+    }
+  });
 }
   function hoverRating(val) { updateStars(val); }
   function resetHover() {
