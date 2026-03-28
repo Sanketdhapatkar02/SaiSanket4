@@ -62,21 +62,22 @@ async function submitReview() {
 
   try {
     await addDoc(collection(db, "reviews"), {
-      name,
-      msg,
+      name: name,
+      msg: msg,
       rating: currentRating,
       createdAt: serverTimestamp()
     });
 
     alert("✅ Thank you for your review!");
 
-    // Reset form
+    // ✅ Reset form
     nameInput.value = "";
     msgInput.value = "";
     currentRating = 0;
 
-document.querySelectorAll('#starInput .star')
-  .forEach(star => star.classList.remove("active"));
+    // ✅ Reset stars UI
+    document.querySelectorAll('#starInput .star')
+      .forEach(star => star.classList.remove("active"));
 
   } catch (error) {
     console.error("Error adding review:", error);
