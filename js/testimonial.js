@@ -137,8 +137,6 @@ function loadReviewsRealtime() {
 }
 
 // 🌐 Make functions accessible to HTML
-window.submitReview = submitReview;
-window.setRating = setRating;
 
 // 🚀 Load reviews on page load
 document.addEventListener('DOMContentLoaded', loadReviewsRealtime);
