@@ -10,9 +10,9 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_DOMAIN",
-  projectId: "YOUR_ID",
+  apiKey: "AIzaSyCs9Fn-zynOyS6gJNFQcMQLmhDeIlgBZTk",
+  authDomain: "sai-sanket.firebaseapp.com",
+  projectId: "sai-sanket",
 };
 
 const app = initializeApp(firebaseConfig);
