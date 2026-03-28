@@ -879,7 +879,7 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
   <div class="section-inner">
     <div class="section-header">
       <span class="section-tag">⭐ Client Reviews</span>
-      <h2>Our Testimonials</h2>
+      <h2>What Our Clients Say</h2>
       <p>Real experiences from families and individuals we've helped protect across Thane. Share your own experience below.</p>
     </div>
     <div class="testimonials-layout">
@@ -900,7 +900,7 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
 
     <div class="field">
       <label>Your Rating *</label>
-      <div class="star-rating" id="starInput">
+      <div class="star-rating" id="starRating">
         <span class="star" onclick="setRating(1)" onmouseover="hoverRating(1)" onmouseout="resetHover()">★</span>
         <span class="star" onclick="setRating(2)" onmouseover="hoverRating(2)" onmouseout="resetHover()">★</span>
         <span class="star" onclick="setRating(3)" onmouseover="hoverRating(3)" onmouseout="resetHover()">★</span>
@@ -1006,8 +1006,13 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
 <!-- Star rating UI logic (Firebase submit/load handled by testimonials.js module) -->
 
 <script>
+  var currentRating = 0;
   var starLabels = ['','Poor','Fair','Good','Very Good','Excellent'];
-  
+  function setRating(val) {
+    currentRating = val;
+    updateStars(val);
+    document.getElementById('starLabel').textContent = starLabels[val];
+  }
   function hoverRating(val) { updateStars(val); }
   function resetHover() {
     updateStars(currentRating);
