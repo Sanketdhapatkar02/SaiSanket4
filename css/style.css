@@ -429,6 +429,10 @@ section.alt { background: var(--warm); }
 .ins-tag { padding: 4px 10px; border-radius: 20px; font-size: 0.73rem; font-weight: 500; }
 
 /* ==================== PLAN DETAIL SECTIONS ==================== */
+.enquire-btn.secondary {
+  background: #eef3ff;
+  color: #1a2e2c;
+}
 .plans-wrapper {
   display: grid;
   grid-template-columns: 260px 1fr;
