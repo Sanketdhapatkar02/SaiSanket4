@@ -675,7 +675,7 @@ section.alt { background: var(--warm); }
 
 .star-rating {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row-reverse; /* 🔥 important */
   justify-content: flex-end;
 }
 
@@ -683,15 +683,16 @@ section.alt { background: var(--warm); }
   font-size: 1.8rem;
   color: #ddd;
   cursor: pointer;
+  transition: color 0.2s;
 }
 
-/* Hover effect */
+/* ⭐ Hover preview */
 .star-rating .star:hover,
 .star-rating .star:hover ~ .star {
   color: #f5a623;
 }
 
-/* Selected stars */
+/* ⭐ Selected (clicked) */
 .star-rating .star.active,
 .star-rating .star.active ~ .star {
   color: #f5a623;
