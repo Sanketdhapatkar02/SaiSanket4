@@ -7,27 +7,30 @@
 
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #f0f4ff, #f8f9fb);
-      color: #1a2e2c;
-    }
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+
+  /* 🔥 Gradient matching professional theme */
+  background: linear-gradient(135deg, #eef3ff, #f8fbff, #e6f4f1);
+
+  color: #1a2e2c;
+}
 
     /* HEADER */
-    .header {
-      text-align: center;
-      padding: 40px 20px 10px;
-    }
+    ..header {
+  text-align: center;
+  padding: 50px 20px 20px;
+}
 
-    .header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
+.header h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
 
-    .header p {
-      color: #666;
-      margin-top: 8px;
-    }
+.header p {
+  color: #5f6c7b;
+  font-size: 14px;
+}
 
     /* BACK BUTTON */
     .back-btn {
@@ -65,23 +68,22 @@
 
     /* CARD */
     .video-card {
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(12px);
-      border-radius: 16px;
-      padding: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      transition: 0.3s;
-      position: relative;
-    }
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  transition: 0.3s;
+  border: 1px solid #eef1f5;
+}
 
-    .video-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-    }
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+}
 
-    .video-card.active-highlight {
-      border: 2px solid #1a7a6e;
-    }
+.video-card.active-highlight {
+  border: 2px solid #1a7a6e;
+}
 
     .video-card h2 {
       margin-bottom: 10px;
@@ -95,22 +97,21 @@
     }
 
     /* CTA BUTTON */
-    .cta-btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 16px;
-      background: linear-gradient(135deg, #1a7a6e, #28a745);
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s;
-    }
+  .cta-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: #1a7a6e;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
 
-    .cta-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
+.cta-btn:hover {
+  background: #155e56;
+}
 
     /* SMALL LABEL */
     .tag {
@@ -142,6 +143,9 @@
       <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Jeevan Anand plan.')">
         Talk to Expert →
       </a>
+      <p style="font-size:12px; color:#777; margin-top:6px;">
+  Explained in simple terms for easy understanding
+</p>
     </div>
 
     <div class="video-card" id="jeevan-umang">
@@ -153,6 +157,9 @@
       <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Jeevan Umang plan.')">
         Talk to Expert →
       </a>
+      <p style="font-size:12px; color:#777; margin-top:6px;">
+  Explained in simple terms for easy understanding
+</p>
     </div>
 
     <div class="video-card" id="tech-term">
@@ -164,6 +171,9 @@
       <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Tech Term plan.')">
         Talk to Expert →
       </a>
+      <p style="font-size:12px; color:#777; margin-top:6px;">
+  Explained in simple terms for easy understanding
+</p>
     </div>
 
     <div class="video-card" id="money-back">
@@ -175,6 +185,9 @@
       <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Money Back plan.')">
         Talk to Expert →
       </a>
+      <p style="font-size:12px; color:#777; margin-top:6px;">
+  Explained in simple terms for easy understanding
+</p>
     </div>
 
     <div class="video-card" id="jeevan-lakshya">
@@ -186,6 +199,9 @@
       <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Jeevan Lakshya plan.')">
         Talk to Expert →
       </a>
+      <p style="font-size:12px; color:#777; margin-top:6px;">
+  Explained in simple terms for easy understanding
+</p>
     </div>
 
     <div class="video-card" id="jeevan-shanti">
@@ -197,6 +213,9 @@
       <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Jeevan Shanti plan.')">
         Talk to Expert →
       </a>
+      <p style="font-size:12px; color:#777; margin-top:6px;">
+  Explained in simple terms for easy understanding
+</p>
     </div>
 
     <div class="video-card" id="aadhaar-shila">
@@ -208,6 +227,9 @@
       <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Aadhaar Shila plan.')">
         Talk to Expert →
       </a>
+      <p style="font-size:12px; color:#777; margin-top:6px;">
+  Explained in simple terms for easy understanding
+</p>
     </div>
 
     <div class="video-card" id="jeevan-azad">
@@ -219,6 +241,9 @@
       <a href="#" class="cta-btn" onclick="openWhatsApp('Hi, I want details about LIC Jeevan Azad plan.')">
         Talk to Expert →
       </a>
+      <p style="font-size:12px; color:#777; margin-top:6px;">
+  Explained in simple terms for easy understanding
+</p>
     </div>
 
   </div>
