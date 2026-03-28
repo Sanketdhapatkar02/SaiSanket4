@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const rating = parseInt(star.getAttribute("data-value"));
       currentRating = rating;
 
-      // update UI
       stars.forEach((s) => {
         const val = parseInt(s.getAttribute("data-value"));
         if (val <= rating) {
@@ -46,20 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   });
-});
-    // Restore after hover
-    star.addEventListener("mouseleave", () => {
-      highlightStars(currentRating);
-    });
-
-    // Click select
-    star.addEventListener("click", () => {
-      currentRating = index + 1;
-      highlightStars(currentRating);
-    });
-
-  });
-
 });
 
 // 🚀 Submit Review
@@ -88,7 +73,10 @@ async function submitReview() {
     // Reset form
     nameInput.value = "";
     msgInput.value = "";
-    setRating(0);
+    currentRating = 0;
+
+document.querySelectorAll('#starInput .star')
+  .forEach(star => star.classList.remove("active"));
 
   } catch (error) {
     console.error("Error adding review:", error);
