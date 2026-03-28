@@ -1016,12 +1016,12 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
   const stars = document.querySelectorAll('#starInput .star');
 
   stars.forEach((star, index) => {
-    if (index < n) {
-      star.classList.add("active");
-    } else {
-      star.classList.remove("active");
-    }
+    star.classList.remove("active");
   });
+
+  for (let i = 0; i < n; i++) {
+    stars[i].classList.add("active");
+  }
 }
   function hoverRating(val) { updateStars(val); }
   function resetHover() {
