@@ -673,19 +673,30 @@ section.alt { background: var(--warm); }
   line-height: 1.7;
 }
 
-.star-rating .star.active {
-  color: #f5a623;
+.star-rating .star {
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.2s;
 }
 
+/* Hover effect */
 .star-rating .star:hover,
 .star-rating .star:hover ~ .star {
   color: #ddd;
 }
 
+/* Fill stars on hover (left side) */
 .star-rating .star:hover,
 .star-rating .star:hover ~ .star {
   color: #f5a623;
 }
+
+/* ⭐ SELECTED STATE (this fixes your issue) */
+.star-rating .star.active {
+  color: #f5a623 !important;
+}
+
+
 
 /* ==================== MODAL ==================== */
 .modal-overlay {
