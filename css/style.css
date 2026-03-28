@@ -673,27 +673,28 @@ section.alt { background: var(--warm); }
   line-height: 1.7;
 }
 
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
 .star-rating .star {
+  font-size: 1.8rem;
   color: #ddd;
   cursor: pointer;
-  transition: color 0.2s;
 }
 
 /* Hover effect */
 .star-rating .star:hover,
 .star-rating .star:hover ~ .star {
-  color: #ddd;
-}
-
-/* Fill stars on hover (left side) */
-.star-rating .star:hover,
-.star-rating .star:hover ~ .star {
   color: #f5a623;
 }
 
-/* ⭐ SELECTED STATE (this fixes your issue) */
-.star-rating .star.active {
-  color: #f5a623 !important;
+/* Selected stars */
+.star-rating .star.active,
+.star-rating .star.active ~ .star {
+  color: #f5a623;
 }
 
 
