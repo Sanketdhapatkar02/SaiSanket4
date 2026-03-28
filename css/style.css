@@ -677,7 +677,6 @@ section.alt { background: var(--warm); }
   font-size: 1.8rem;
   color: #ccc;
   cursor: pointer;
-  transition: color 0.2s;
 }
 
 .star-rating .star.active {
