@@ -26,22 +26,27 @@ const db = getFirestore(app);
 let currentRating = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
-
   const stars = document.querySelectorAll('#starInput .star');
 
-  function highlightStars(rating) {
-    stars.forEach((star, i) => {
-      star.classList.toggle("active", i < rating);
+  stars.forEach((star) => {
+
+    star.addEventListener("click", () => {
+      const rating = parseInt(star.getAttribute("data-value"));
+      currentRating = rating;
+
+      // update UI
+      stars.forEach((s) => {
+        const val = parseInt(s.getAttribute("data-value"));
+        if (val <= rating) {
+          s.classList.add("active");
+        } else {
+          s.classList.remove("active");
+        }
+      });
     });
-  }
 
-  stars.forEach((star, index) => {
-
-    // Hover preview
-    star.addEventListener("mouseenter", () => {
-      highlightStars(index + 1);
-    });
-
+  });
+});
     // Restore after hover
     star.addEventListener("mouseleave", () => {
       highlightStars(currentRating);
