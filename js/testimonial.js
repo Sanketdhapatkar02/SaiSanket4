@@ -66,4 +66,6 @@ async function loadReviews() {
 }
 
 // Load on start
+window.submitReview = submitReview;
+window.setRating = setRating;
 loadReviews();
