@@ -673,31 +673,16 @@ section.alt { background: var(--warm); }
   line-height: 1.7;
 }
 
-.star-rating {
-  display: flex;
-  flex-direction: row-reverse; /* 🔥 important */
-  justify-content: flex-end;
-}
-
 .star-rating .star {
   font-size: 1.8rem;
-  color: #ddd;
+  color: #ccc;
   cursor: pointer;
   transition: color 0.2s;
 }
 
-/* ⭐ Hover preview */
-.star-rating .star:hover,
-.star-rating .star:hover ~ .star {
+.star-rating .star.active {
   color: #f5a623;
 }
-
-/* ⭐ Selected (clicked) */
-.star-rating .star.active,
-.star-rating .star.active ~ .star {
-  color: #f5a623;
-}
-
 
 
 /* ==================== MODAL ==================== */
