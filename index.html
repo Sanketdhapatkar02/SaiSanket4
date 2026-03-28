@@ -18,9 +18,7 @@
 <link rel="stylesheet" href="css/style.css">
 <style>
 /* ===== TESTIMONIALS SECTION ===== */
-#testimonials {
-  background: #f8fffe;
-}
+#testimonials { background: #f8fffe; }
 
 .testimonials-layout {
 display: grid;
@@ -28,15 +26,10 @@ grid-template-columns: 1fr 1fr;
 gap: 48px;
 margin-top: 40px;
 }
-
 @media (max-width: 768px) {
-.testimonials-layout {
-grid-template-columns: 1fr;
-gap: 32px;
-}
+.testimonials-layout { grid-template-columns: 1fr; gap: 32px; }
 }
 
-/* Reviews Display */
 #reviewsContainer {
 display: flex;
 flex-direction: column;
@@ -45,18 +38,9 @@ max-height: 520px;
 overflow-y: auto;
 padding-right: 6px;
 }
-
-#reviewsContainer::-webkit-scrollbar {
-width: 4px;
-}
-#reviewsContainer::-webkit-scrollbar-track {
-background: #f0f0f0;
-border-radius: 4px;
-}
-#reviewsContainer::-webkit-scrollbar-thumb {
-background: #1a7a6e;
-border-radius: 4px;
-}
+#reviewsContainer::-webkit-scrollbar { width: 4px; }
+#reviewsContainer::-webkit-scrollbar-track { background: #f0f0f0; border-radius: 4px; }
+#reviewsContainer::-webkit-scrollbar-thumb { background: #1a7a6e; border-radius: 4px; }
 
 .review-card {
 background: #fff;
@@ -64,43 +48,13 @@ border: 1px solid #e8f5f3;
 border-radius: 14px;
 padding: 20px 22px;
 box-shadow: 0 2px 12px rgba(26,122,110,0.06);
-transition: box-shadow 0.2s;
 }
+.review-card h4 { font-family:‘DM Sans’,sans-serif; font-weight:600; font-size:1rem; color:#1a2e2c; margin:0 0 6px 0; }
+.review-stars { color:#f5a623; font-size:1.1rem; letter-spacing:2px; margin-bottom:10px; }
+.review-card p { color:#4a6360; font-size:0.92rem; line-height:1.6; margin:0; }
 
-.review-card:hover {
-box-shadow: 0 4px 20px rgba(26,122,110,0.12);
-}
+.reviews-count-label { font-size:0.85rem; color:#6b8f8c; margin-bottom:14px; font-weight:500; }
 
-.review-card h4 {
-font-family: ‘DM Sans’, sans-serif;
-font-weight: 600;
-font-size: 1rem;
-color: #1a2e2c;
-margin: 0 0 6px 0;
-}
-
-.review-stars {
-color: #f5a623;
-font-size: 1.1rem;
-letter-spacing: 2px;
-margin-bottom: 10px;
-}
-
-.review-card p {
-color: #4a6360;
-font-size: 0.92rem;
-line-height: 1.6;
-margin: 0;
-}
-
-.reviews-loading {
-color: #888;
-font-size: 0.95rem;
-padding: 20px 0;
-text-align: center;
-}
-
-/* Submit Review Form */
 .review-form-card {
 background: #fff;
 border: 1px solid #e8f5f3;
@@ -108,140 +62,39 @@ border-radius: 18px;
 padding: 28px 28px 24px;
 box-shadow: 0 2px 16px rgba(26,122,110,0.07);
 height: fit-content;
-position: sticky;
-top: 90px;
 }
-
-.review-form-card h3 {
-font-family: ‘DM Serif Display’, serif;
-font-size: 1.4rem;
-color: #1a2e2c;
-margin: 0 0 4px 0;
-}
-
-.review-form-card .sub {
-color: #6b8f8c;
-font-size: 0.88rem;
-margin-bottom: 20px;
-}
-
-.star-rating {
-display: flex;
-gap: 6px;
-margin-bottom: 18px;
-}
-
-.star-rating .star {
-font-size: 1.8rem;
-cursor: pointer;
-color: #ddd;
-transition: color 0.15s, transform 0.1s;
-line-height: 1;
-user-select: none;
-}
-
-.star-rating .star:hover,
-.star-rating .star.active {
-color: #f5a623;
-}
-
-.star-rating .star:hover {
-transform: scale(1.15);
-}
-
-.star-label {
-font-size: 0.82rem;
-color: #888;
-margin-bottom: 14px;
-min-height: 16px;
-}
-
-.review-form-card .field {
-margin-bottom: 14px;
-}
-
-.review-form-card label {
-display: block;
-font-size: 0.85rem;
-font-weight: 500;
-color: #2a4a47;
-margin-bottom: 5px;
-}
-
+.review-form-card h3 { font-family:‘DM Serif Display’,serif; font-size:1.4rem; color:#1a2e2c; margin:0 0 4px 0; }
+.review-form-card .sub { color:#6b8f8c; font-size:0.88rem; margin-bottom:20px; }
+.review-form-card .field { margin-bottom:14px; }
+.review-form-card label { display:block; font-size:0.85rem; font-weight:500; color:#2a4a47; margin-bottom:5px; }
 .review-form-card input,
 .review-form-card textarea {
-width: 100%;
-padding: 10px 14px;
-border: 1.5px solid #d0e8e5;
-border-radius: 8px;
-font-family: ‘DM Sans’, sans-serif;
-font-size: 0.92rem;
-color: #1a2e2c;
-background: #f8fffe;
-transition: border-color 0.2s;
-box-sizing: border-box;
-outline: none;
+width:100%; padding:10px 14px; border:1.5px solid #d0e8e5; border-radius:8px;
+font-family:‘DM Sans’,sans-serif; font-size:0.92rem; color:#1a2e2c;
+background:#f8fffe; box-sizing:border-box; outline:none; transition:border-color 0.2s;
 }
-
 .review-form-card input:focus,
-.review-form-card textarea:focus {
-border-color: #1a7a6e;
-background: #fff;
-}
+.review-form-card textarea:focus { border-color:#1a7a6e; background:#fff; }
+.review-form-card textarea { resize:vertical; min-height:90px; }
 
-.review-form-card textarea {
-resize: vertical;
-min-height: 90px;
-}
+.star-rating { display:flex; gap:6px; margin-bottom:8px; }
+.star-rating .star { font-size:1.8rem; cursor:pointer; color:#ddd; transition:color 0.15s,transform 0.1s; line-height:1; user-select:none; }
+.star-rating .star:hover, .star-rating .star.active { color:#f5a623; }
+.star-rating .star:hover { transform:scale(1.15); }
+.star-label { font-size:0.82rem; color:#888; margin-bottom:14px; min-height:16px; }
 
 .review-submit-btn {
-width: 100%;
-background: linear-gradient(135deg, #1a7a6e, #25a898);
-color: #fff;
-border: none;
-border-radius: 10px;
-padding: 13px 20px;
-font-family: ‘DM Sans’, sans-serif;
-font-size: 0.95rem;
-font-weight: 600;
-cursor: pointer;
-transition: opacity 0.2s, transform 0.15s;
-margin-top: 4px;
+width:100%; background:linear-gradient(135deg,#1a7a6e,#25a898); color:#fff;
+border:none; border-radius:10px; padding:13px 20px;
+font-family:‘DM Sans’,sans-serif; font-size:0.95rem; font-weight:600;
+cursor:pointer; transition:opacity 0.2s,transform 0.15s; margin-top:4px;
 }
-
-.review-submit-btn:hover {
-opacity: 0.92;
-transform: translateY(-1px);
-}
-
-.review-submit-btn:active {
-transform: translateY(0);
-}
+.review-submit-btn:hover { opacity:0.92; transform:translateY(-1px); }
 
 .review-success {
-display: none;
-background: #e8f5f3;
-border: 1px solid #1a7a6e;
-border-radius: 8px;
-padding: 12px 16px;
-color: #1a5a50;
-font-size: 0.9rem;
-margin-top: 12px;
-text-align: center;
-}
-
-.reviews-count-label {
-font-size: 0.85rem;
-color: #6b8f8c;
-margin-bottom: 14px;
-font-weight: 500;
-}
-
-.no-reviews-msg {
-text-align: center;
-color: #aaa;
-font-size: 0.92rem;
-padding: 30px 0;
+display:none; background:#e8f5f3; border:1px solid #1a7a6e;
+border-radius:8px; padding:12px 16px; color:#1a5a50;
+font-size:0.9rem; margin-top:12px; text-align:center;
 }
 </style>
 
@@ -281,7 +134,6 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
       <li><a href="#health">Star Health</a></li>
       <li><a href="#vehicle">Vehicle</a></li>
       <li><a href="#invest">Investments</a></li>
-      <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="nav-cta" id="navCta">Get Free Advice →</a>
@@ -946,64 +798,6 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
   </div>
 </section>
 
-<!-- ===== TESTIMONIALS SECTION ===== -->
-
-<section id="testimonials">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-tag">⭐ Client Reviews</span>
-      <h2>What Our Clients Say</h2>
-      <p>Real experiences from families and individuals we've helped protect across Thane. Share your own experience below.</p>
-    </div>
-
-```
-<div class="testimonials-layout">
-  <!-- Left: Existing Reviews -->
-  <div>
-    <div class="reviews-count-label" id="reviewsCountLabel">Loading reviews...</div>
-    <div id="reviewsContainer">
-      <div class="reviews-loading">Fetching reviews...</div>
-    </div>
-  </div>
-
-  <!-- Right: Submit Review Form -->
-  <div class="review-form-card">
-    <h3>Share Your Experience</h3>
-    <div class="sub">Your review helps others make better decisions.</div>
-
-    <div class="field">
-      <label>Your Rating *</label>
-      <div class="star-rating" id="starRating">
-        <span class="star" data-val="1" onclick="setRating(1)" onmouseover="hoverRating(1)" onmouseout="resetHover()">★</span>
-        <span class="star" data-val="2" onclick="setRating(2)" onmouseover="hoverRating(2)" onmouseout="resetHover()">★</span>
-        <span class="star" data-val="3" onclick="setRating(3)" onmouseover="hoverRating(3)" onmouseout="resetHover()">★</span>
-        <span class="star" data-val="4" onclick="setRating(4)" onmouseover="hoverRating(4)" onmouseout="resetHover()">★</span>
-        <span class="star" data-val="5" onclick="setRating(5)" onmouseover="hoverRating(5)" onmouseout="resetHover()">★</span>
-      </div>
-      <div class="star-label" id="starLabel">Click to rate</div>
-    </div>
-
-    <div class="field">
-      <label>Your Name *</label>
-      <input type="text" id="t-name" placeholder="e.g. Rahul Sharma">
-    </div>
-
-    <div class="field">
-      <label>Your Review *</label>
-      <textarea id="t-msg" rows="4" placeholder="Tell others about your experience with Sai Sanket Insurance..."></textarea>
-    </div>
-
-    <button class="review-submit-btn" onclick="submitReview()">Submit Review ★</button>
-    <div class="review-success" id="reviewSuccess">
-      ✅ Thank you for your review! It has been submitted successfully.
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-</section>
-
 <!-- CONTACT -->
 
 <section id="contact">
@@ -1079,6 +873,65 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
   </div>
 </section>
 
+<!-- ===== TESTIMONIALS — added below contact ===== -->
+
+<section id="testimonials" class="alt">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-tag">⭐ Client Reviews</span>
+      <h2>What Our Clients Say</h2>
+      <p>Real experiences from families and individuals we've helped protect across Thane. Share your own experience below.</p>
+    </div>
+    <div class="testimonials-layout">
+
+```
+  <!-- Left: existing reviews from Firebase -->
+  <div>
+    <div class="reviews-count-label" id="reviewsCountLabel">Loading reviews...</div>
+    <div id="reviewsContainer">
+      <div style="color:#aaa;font-size:0.92rem;padding:20px 0;text-align:center;">Fetching reviews...</div>
+    </div>
+  </div>
+
+  <!-- Right: submit a review -->
+  <div class="review-form-card">
+    <h3>Share Your Experience</h3>
+    <div class="sub">Your review helps others make better decisions.</div>
+
+    <div class="field">
+      <label>Your Rating *</label>
+      <div class="star-rating" id="starRating">
+        <span class="star" onclick="setRating(1)" onmouseover="hoverRating(1)" onmouseout="resetHover()">★</span>
+        <span class="star" onclick="setRating(2)" onmouseover="hoverRating(2)" onmouseout="resetHover()">★</span>
+        <span class="star" onclick="setRating(3)" onmouseover="hoverRating(3)" onmouseout="resetHover()">★</span>
+        <span class="star" onclick="setRating(4)" onmouseover="hoverRating(4)" onmouseout="resetHover()">★</span>
+        <span class="star" onclick="setRating(5)" onmouseover="hoverRating(5)" onmouseout="resetHover()">★</span>
+      </div>
+      <div class="star-label" id="starLabel">Click to rate</div>
+    </div>
+
+    <div class="field">
+      <label>Your Name *</label>
+      <input type="text" id="t-name" placeholder="e.g. Rahul Sharma">
+    </div>
+
+    <div class="field">
+      <label>Your Review *</label>
+      <textarea id="t-msg" rows="4" placeholder="Tell others about your experience with Sai Sanket Insurance..."></textarea>
+    </div>
+
+    <button class="review-submit-btn" onclick="submitReview()">Submit Review ★</button>
+    <div class="review-success" id="reviewSuccess">
+      ✅ Thank you! Your review has been submitted successfully.
+    </div>
+  </div>
+
+</div>
+```
+
+  </div>
+</section>
+
 <!-- FOOTER -->
 
 <footer>
@@ -1109,7 +962,6 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
         <h5>Quick Links</h5>
         <a href="#insurance">All Plans</a>
         <a href="#invest">SIP Calculator</a>
-        <a href="#testimonials">Client Reviews</a>
         <a href="#contact">Contact Us</a>
         <a href="#contact">Raise a Query</a>
         <a href="tel:+919867431898">📞 Call Now</a>
@@ -1151,30 +1003,23 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
 
 <script src="js/main.js"></script>
 
-<!-- Testimonials star rating inline script (UI logic only — Firebase handled by testimonials.js) -->
+<!-- Star rating UI logic (Firebase submit/load handled by testimonials.js module) -->
 
 <script>
   var currentRating = 0;
-  var starLabels = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
-
+  var starLabels = ['','Poor','Fair','Good','Very Good','Excellent'];
   function setRating(val) {
     currentRating = val;
     updateStars(val);
     document.getElementById('starLabel').textContent = starLabels[val];
   }
-
-  function hoverRating(val) {
-    updateStars(val);
-  }
-
+  function hoverRating(val) { updateStars(val); }
   function resetHover() {
     updateStars(currentRating);
     document.getElementById('starLabel').textContent = currentRating ? starLabels[currentRating] : 'Click to rate';
   }
-
   function updateStars(val) {
-    var stars = document.querySelectorAll('#starRating .star');
-    stars.forEach(function(s, i) {
+    document.querySelectorAll('#starRating .star').forEach(function(s,i){
       s.classList.toggle('active', i < val);
     });
   }
