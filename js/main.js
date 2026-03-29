@@ -24,15 +24,28 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 /*-----Gallery sliderbar------*/
 
-function scrollGallery(direction) {
-  const container = document.getElementById('galleryCarousel');
-  const scrollAmount = 300;
+const track = document.getElementById('galleryTrack');
+const nextBtn = document.querySelector('.gallery-btn.next');
+const prevBtn = document.querySelector('.gallery-btn.prev');
 
-  container.scrollBy({
-    left: direction * scrollAmount,
-    behavior: 'smooth'
-  });
-}
+let position = 0;
+
+nextBtn.addEventListener('click', () => {
+  position -= 320; // image width + gap
+  const maxScroll = -(track.scrollWidth - track.clientWidth);
+
+  if (position < maxScroll) position = maxScroll;
+
+  track.style.transform = `translateX(${position}px)`;
+});
+
+prevBtn.addEventListener('click', () => {
+  position += 320;
+
+  if (position > 0) position = 0;
+
+  track.style.transform = `translateX(${position}px)`;
+});
 /* ---- Plan tabs switcher ---- */
 function showPlan(prefix, id) {
   // Hide all plan details for this prefix
