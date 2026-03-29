@@ -22,6 +22,30 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
+/*--------------lightbox-----*/
+// Open lightbox
+function openLightbox(src) {
+  const lightbox = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+
+  img.src = src;
+  lightbox.style.display = "flex";
+}
+
+// Close lightbox
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = "none";
+}
+
+// Click outside to close
+document.addEventListener("click", function(e) {
+  const lightbox = document.getElementById('lightbox');
+
+  if (e.target === lightbox) {
+    closeLightbox();
+  }
+});
+
 /*-----Gallery sliderbar------*/
 
 function scrollGallery(direction) {
