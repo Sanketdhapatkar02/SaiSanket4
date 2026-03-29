@@ -24,6 +24,23 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 /*-----Gallery sliderbar------*/
 
+function scrollGallery(direction) {
+  const container = document.getElementById('galleryTrack');
+
+  if (!container) {
+    console.log("Gallery not found");
+    return;
+  }
+
+  const scrollAmount = 320;
+
+  container.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth'
+  });
+}
+-------------
+
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.getElementById('galleryTrack');
   const nextBtn = document.querySelector('.gallery-btn.next');
