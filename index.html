@@ -963,21 +963,28 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
   </div>
 </section>
 <!-- ===== GALLERY ===== -->
+<!-- ===== GALLERY (CAROUSEL) ===== -->
 <section id="gallery">
   <div class="section-inner">
     <div class="section-header">
       <span class="section-tag">📸 Gallery</span>
       <h2>Our Work & Achievements</h2>
-      <p>A glimpse of our milestones, client interactions, and achievements.</p>
+      <p>A glimpse of our milestones and client success stories.</p>
     </div>
 
-    <div class="gallery-grid">
-      <img src="images/gallery1.jpg" alt="Achievement 1">
-      <img src="images/gallery2.jpg" alt="Achievement 2">
-      <img src="images/gallery3.jpg" alt="Achievement 3">
-      <img src="images/gallery4.jpg" alt="Achievement 4">
-      <img src="images/gallery5.jpg" alt="Achievement 5">
-      <img src="images/gallery6.jpg" alt="Achievement 6">
+    <div class="gallery-wrapper">
+      <button class="gallery-btn left" onclick="scrollGallery(-1)">❮</button>
+
+      <div class="gallery-carousel" id="galleryCarousel">
+        <img src="images/gallery1.jpg" alt="">
+        <img src="images/gallery2.jpg" alt="">
+        <img src="images/gallery3.jpg" alt="">
+        <img src="images/gallery4.jpg" alt="">
+        <img src="images/gallery5.jpg" alt="">
+        <img src="images/gallery6.jpg" alt="">
+      </div>
+
+      <button class="gallery-btn right" onclick="scrollGallery(1)">❯</button>
     </div>
   </div>
 </section>
