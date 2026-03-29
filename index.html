@@ -963,21 +963,30 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
   </div>
 </section>
 <!-- ===== GALLERY ===== -->
-<!-- ===== GALLERY (WORKING SLIDER) ===== -->
-<div class="gallery-container">
-  
-  <button class="gallery-btn prev">❮</button>
+<!-- ===== GALLERY (WORKING FINAL) ===== -->
+<section id="gallery">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-tag">📸 Gallery</span>
+      <h2>Our Work & Achievements</h2>
+      <p>A glimpse of our milestones and success stories.</p>
+    </div>
 
-  <div class="gallery-track" id="galleryTrack">
-    <img src="images/gallery1.jpg">
-    <img src="images/gallery2.jpg">
-    <img src="images/gallery3.jpg">
-    <img src="images/gallery4.jpg">
+    <div class="gallery-container">
+      <button class="gallery-btn prev" onclick="scrollGallery(-1)">❮</button>
+
+      <div class="gallery-track" id="galleryTrack">
+        <img src="images/gallery1.jpg">
+        <img src="images/gallery2.jpg">
+        <img src="images/gallery3.jpg">
+        <img src="images/gallery4.jpg">
+        <img src="images/gallery5.jpg">
+      </div>
+
+      <button class="gallery-btn next" onclick="scrollGallery(1)">❯</button>
+    </div>
   </div>
-
-  <button class="gallery-btn next">❯</button>
-
-</div>
+</section>
   
 <!-- ===== TESTIMONIALS — added below contact ===== -->
 
