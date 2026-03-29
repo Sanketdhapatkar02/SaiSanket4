@@ -687,6 +687,11 @@ section.alt { background: var(--warm); }
   color: #f5a623;
 }
 =========GALLERY=========
+
+.gallery-btn {
+  display: block !important;
+  z-index: 99999 !important;
+}
 .gallery-container {
   position: relative;
   margin-top: 30px;
