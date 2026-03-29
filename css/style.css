@@ -689,53 +689,50 @@ section.alt { background: var(--warm); }
 =========GALLERY=========
 .gallery-container {
   position: relative;
-  overflow: hidden;
   margin-top: 30px;
 }
 
-/* Track */
 .gallery-track {
   display: flex;
+  overflow-x: auto;   /* 🔥 THIS MAKES IT SCROLLABLE */
+  scroll-behavior: smooth;
   gap: 15px;
-  transition: transform 0.4s ease;
+  padding: 10px;
 }
 
-/* Images (uniform size) */
+/* Uniform images */
 .gallery-track img {
-  width: 300px;
+  min-width: 300px;
   height: 200px;
   object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
 }
 
-/* 🔥 FIXED BUTTONS */
+/* Hide scrollbar */
+.gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Buttons (FORCED VISIBLE) */
 .gallery-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #000;
-  color: #fff;
+  background: black;
+  color: white;
   border: none;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  z-index: 999;   /* VERY IMPORTANT */
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  font-size: 20px;
+  opacity: 0.9;
 }
 
-/* Force visible */
-.gallery-btn.prev {
-  left: 10px;
-}
-
-.gallery-btn.next {
-  right: 10px;
-}
+.gallery-btn.prev { left: 0; }
+.gallery-btn.next { right: 0; }
 
 /* ==================== MODAL ==================== */
 .modal-overlay {
