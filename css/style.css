@@ -687,24 +687,57 @@ section.alt { background: var(--warm); }
   color: #f5a623;
 }
 =========GALLERY=========
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
+.gallery-wrapper {
+  position: relative;
   margin-top: 30px;
 }
 
-.gallery-grid img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: 0.3s ease;
-  cursor: pointer;
+.gallery-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 15px;
+  padding: 10px;
 }
 
-.gallery-grid img:hover {
+/* 🔥 THIS IS THE MAGIC (uniform size) */
+.gallery-carousel img {
+  min-width: 280px;
+  height: 200px;
+  object-fit: cover;   /* crops properly */
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: 0.3s;
+}
+
+.gallery-carousel img:hover {
   transform: scale(1.05);
+}
+
+/* Hide scrollbar */
+.gallery-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #111;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.gallery-btn.left {
+  left: -10px;
+}
+
+.gallery-btn.right {
+  right: -10px;
 }
 
 
