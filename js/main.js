@@ -24,27 +24,34 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 /*-----Gallery sliderbar------*/
 
-const track = document.getElementById('galleryTrack');
-const nextBtn = document.querySelector('.gallery-btn.next');
-const prevBtn = document.querySelector('.gallery-btn.prev');
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById('galleryTrack');
+  const nextBtn = document.querySelector('.gallery-btn.next');
+  const prevBtn = document.querySelector('.gallery-btn.prev');
 
-let position = 0;
+  if (!track || !nextBtn || !prevBtn) {
+    console.log("Gallery elements not found");
+    return;
+  }
 
-nextBtn.addEventListener('click', () => {
-  position -= 320; // image width + gap
-  const maxScroll = -(track.scrollWidth - track.clientWidth);
+  let position = 0;
 
-  if (position < maxScroll) position = maxScroll;
+  nextBtn.addEventListener('click', () => {
+    position -= 320;
+    const maxScroll = -(track.scrollWidth - track.parentElement.clientWidth);
 
-  track.style.transform = `translateX(${position}px)`;
-});
+    if (position < maxScroll) position = maxScroll;
 
-prevBtn.addEventListener('click', () => {
-  position += 320;
+    track.style.transform = `translateX(${position}px)`;
+  });
 
-  if (position > 0) position = 0;
+  prevBtn.addEventListener('click', () => {
+    position += 320;
 
-  track.style.transform = `translateX(${position}px)`;
+    if (position > 0) position = 0;
+
+    track.style.transform = `translateX(${position}px)`;
+  });
 });
 /* ---- Plan tabs switcher ---- */
 function showPlan(prefix, id) {
