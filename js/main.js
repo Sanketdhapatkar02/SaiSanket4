@@ -22,6 +22,17 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
+/*-----Gallery sliderbar------*/
+
+function scrollGallery(direction) {
+  const container = document.getElementById('galleryCarousel');
+  const scrollAmount = 300;
+
+  container.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth'
+  });
+}
 /* ---- Plan tabs switcher ---- */
 function showPlan(prefix, id) {
   // Hide all plan details for this prefix
