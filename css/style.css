@@ -693,38 +693,49 @@ section.alt { background: var(--warm); }
   margin-top: 30px;
 }
 
+/* Track */
 .gallery-track {
   display: flex;
+  gap: 15px;
   transition: transform 0.4s ease;
 }
 
-/* 🔥 FIXED SIZE */
+/* Images (uniform size) */
 .gallery-track img {
   width: 300px;
   height: 200px;
   object-fit: cover;
-  margin-right: 15px;
   border-radius: 12px;
   flex-shrink: 0;
 }
 
-/* Buttons */
+/* 🔥 FIXED BUTTONS */
 .gallery-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #111;
+  background: #000;
   color: #fff;
   border: none;
-  padding: 10px 15px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 999;   /* VERY IMPORTANT */
   border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.gallery-btn.prev { left: 10px; }
-.gallery-btn.next { right: 10px; }
+/* Force visible */
+.gallery-btn.prev {
+  left: 10px;
+}
 
+.gallery-btn.next {
+  right: 10px;
+}
 
 /* ==================== MODAL ==================== */
 .modal-overlay {
