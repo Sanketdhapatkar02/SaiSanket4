@@ -12,13 +12,15 @@ if (nav) {
 
 /* ---- Mobile hamburger menu ---- */
 function toggleMenu() {
-  document.getElementById('mainNav').classList.toggle('nav-mobile-open');
+  const navEl = document.getElementById('mainNav');
+  if (navEl) navEl.classList.toggle('nav-mobile-open');
 }
 
 // Close mobile menu on link click
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
-    document.getElementById('mainNav').classList.remove('nav-mobile-open');
+    const navEl = document.getElementById('mainNav');
+    if (navEl) navEl.classList.remove('nav-mobile-open');
   });
 });
 
@@ -40,30 +42,24 @@ function closeLightbox() {
 // Click outside to close
 document.addEventListener("click", function(e) {
   const lightbox = document.getElementById('lightbox');
-
   if (e.target === lightbox) {
     closeLightbox();
   }
 });
 
 /*-----Gallery sliderbar------*/
-
 function scrollGallery(direction) {
   const container = document.getElementById('galleryTrack');
-
   if (!container) {
     console.log("Gallery not found");
     return;
   }
-
   const scrollAmount = 320;
-
   container.scrollBy({
     left: direction * scrollAmount,
     behavior: 'smooth'
   });
 }
--------------
 
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.getElementById('galleryTrack');
@@ -80,31 +76,25 @@ document.addEventListener("DOMContentLoaded", () => {
   nextBtn.addEventListener('click', () => {
     position -= 320;
     const maxScroll = -(track.scrollWidth - track.parentElement.clientWidth);
-
     if (position < maxScroll) position = maxScroll;
-
     track.style.transform = `translateX(${position}px)`;
   });
 
   prevBtn.addEventListener('click', () => {
     position += 320;
-
     if (position > 0) position = 0;
-
     track.style.transform = `translateX(${position}px)`;
   });
 });
+
 /* ---- Plan tabs switcher ---- */
 function showPlan(prefix, id) {
-  // Hide all plan details for this prefix
   document.querySelectorAll(`.plan-detail[id^="${prefix}-"]`).forEach(d => {
     d.classList.remove('active');
   });
-  // Show selected
   const target = document.getElementById(`${prefix}-${id}`);
   if (target) target.classList.add('active');
 
-  // Update nav button states
   document.querySelectorAll('.plan-nav-btn').forEach(btn => {
     const attr = btn.getAttribute('onclick') || '';
     if (attr.includes(`'${prefix}'`)) {
@@ -129,12 +119,10 @@ function calcSIP() {
   const n = years * 12;
   const age = document.getElementById('ageGroup').value;
 
-  // Update labels
   document.getElementById('sipAmtLabel').textContent = '₹' + P.toLocaleString('en-IN');
   document.getElementById('sipRetLabel').textContent = annualRate + '%';
   document.getElementById('sipYrsLabel').textContent = years + (years === 1 ? ' year' : ' years');
 
-  // Calculate SIP maturity
   const maturity = P * (((Math.pow(1 + r, n) - 1) / r) * (1 + r));
   const invested = P * n;
   const gains = maturity - invested;
@@ -144,7 +132,6 @@ function calcSIP() {
   document.getElementById('r-total').textContent = fmtINR(maturity);
   document.getElementById('r-multi').textContent = (maturity / invested).toFixed(2) + '×';
 
-  // Age-based suggestions
   const suggestions = {
     young: '💡 For your age group (20–35 yrs), we recommend aggressive equity funds — mid-cap and small-cap SIPs. You have time to ride market cycles and build significant wealth. Consider ELSS for tax saving too.',
     mid: '💡 For your age group (35–50 yrs), a balanced approach works best — a mix of large-cap equity (60%) and debt funds (40%). Consider ELSS for tax saving and review your portfolio every 2 years.',
@@ -154,7 +141,6 @@ function calcSIP() {
   if (el) el.textContent = suggestions[age];
 }
 
-// Run calculator on load
 if (document.getElementById('sipAmt')) calcSIP();
 
 /* ---- Contact form submission ---- */
@@ -169,17 +155,14 @@ function submitQuery() {
     return;
   }
 
-  // Show success
   const btn = document.getElementById('submitBtn');
   const success = document.getElementById('successMsg');
   if (btn) btn.style.display = 'none';
   if (success) success.style.display = 'block';
 
-  // Also open WhatsApp with the query details (as a bonus)
   const waMsg = encodeURIComponent(
     `Hello, I'm ${name}.\nPhone: ${phone}\nInterested in: ${type}\nQuery: ${msg}`
   );
-  // Delay a bit so user sees the success message
   setTimeout(() => {
     window.open(`https://wa.me/919867431898?text=${waMsg}`, '_blank');
   }, 800);
@@ -193,7 +176,6 @@ function openEnquiry(planName) {
   document.getElementById('m-name').value = '';
   document.getElementById('m-phone').value = '';
 
-  // Pre-fill WhatsApp link
   const waLink = `https://wa.me/919867431898?text=${encodeURIComponent('Hello, I am interested in ' + planName + '. Please share more details.')}`;
   document.getElementById('modalWaBtn').href = waLink;
 
@@ -217,7 +199,6 @@ function submitModal() {
 
   document.getElementById('modalSuccess').style.display = 'block';
 
-  // Send via WhatsApp
   const waMsg = encodeURIComponent(`Hello! My name is ${name}, phone: ${phone}. I am interested in ${plan}. Please call me.`);
   setTimeout(() => {
     window.open(`https://wa.me/919867431898?text=${waMsg}`, '_blank');
@@ -225,7 +206,6 @@ function submitModal() {
   }, 900);
 }
 
-// Close modal on Escape key
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
