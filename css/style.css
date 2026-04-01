@@ -1082,3 +1082,27 @@ body {
 .highlight {
   color: #00c896;
 }
+
+/* ===== FIX FOR INVISIBLE TEXT ON DARK BACKGROUNDS ===== */
+
+/* 1. Fix headings and plan buttons */
+#lic .section-header h2,
+#lic .plan-nav-btn,
+#lic .plan-detail h3,
+#vehicle .section-header h2,
+#vehicle .plan-nav-btn,
+#vehicle .plan-detail h3 {
+    color: #ffffff !important;
+}
+
+/* 2. Fix the plan descriptions so they are readable */
+#lic .plan-detail .desc,
+#vehicle .plan-detail .desc {
+    color: #cccccc !important;
+}
+
+/* 3. Ensure the active button text stays white */
+#lic .plan-nav-btn.active,
+#vehicle .plan-nav-btn.active {
+    color: #ffffff !important;
+}
