@@ -1021,7 +1021,7 @@ footer {
 
 /* ===== BLOG DARK THEME FIX ===== */
 
-body {
+body.blog-page {
   background-color: #0f0f0f !important;
   color: #ffffff !important;
 }
